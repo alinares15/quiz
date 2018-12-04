@@ -12,3 +12,25 @@ $(document).ready(function() {
     });
 
 });
+
+
+// function question1(answer){
+//     if (ansewr === tiger"){
+//         return Number;
+//     } else if (user === "eagle"){
+//         return different number;
+        
+//     }else if (answer === "penguin")
+//     return dif num 
+// }
+
+// $(button)..........n
+// input.val()
+
+
+// question
+
+function dogsOrcats(){
+    var usrinput = $("#question3").val();
+    
+}
