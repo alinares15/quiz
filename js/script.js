@@ -30,7 +30,17 @@ $(document).ready(function() {
 
 // question
 
+var num = $("usrinput").val(num);
+
 function dogsOrcats(){
     var usrinput = $("#question3").val();
-    
+    if (usrinput === "dogs"){
+        return num + 3;
+    } 
+    else if (usrinput === "cats"){
+        return num + 2;
+    }
+    else  {
+        return num + 1;
+    }
 }
