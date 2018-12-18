@@ -1,5 +1,5 @@
 /* global $ */
-
+var finalScore ;
 $(document).ready(function() {
     $("button").click(function() {
         var num = 0;
@@ -14,13 +14,20 @@ $(document).ready(function() {
         var q2score = mood(q2Result);
         var q1score = weather(q1Result);
         totalScore = q3score + q2score + q1score;
-        if (totalScore === 22){
-            $(".result").html("You Are Craving Pizza!")
-        } else if (totalScore < 12){
-            $(".result").html("You Are Craving Salad!")
+        finalScore = totalScore;
+        var message;
+        if (totalScore === 10 ){
+            message = congragulate(name, "Pizza");
+            
+        } else if (totalScore < 6){
+            message = congragulate(name, "Salad")
+            
         } else {
-            $(".result").html("You Are Craving SLEEP!")
+            message = congragulate(name, "SLEEP")
+            
         }
+        $(".result").html(message);
+        
     });
 
 });
@@ -54,13 +61,13 @@ function dogsOrcats(q3Result){
         return 1;
     }
 }
-
+ dogsOrcats();
 
 function mood(q2Result){
     if (q2Result === "content"){
         return 4;
     } 
-    else if (q2Result === "agatated"){
+    else if (q2Result === "agatited"){
         return 3;
     } else if (q2Result === "hungry"){
         return 2;
@@ -69,17 +76,19 @@ function mood(q2Result){
     }
 }
 
+
 function weather(q3Result){
     if (q3Result === "sunny"){
         return 3;
     }
-    else if (q3Result === "rainty"){
+    else if (q3Result === "rainy"){
         return 2;
     } else {
         return 1;
     }
 }
 
-function congragulate() {
-    
+
+function congragulate(Name, food) {
+    return "Congratulation " + Name + ", You're Craving " + food + " ! " + "You scored " + finalScore + " points";
 }
